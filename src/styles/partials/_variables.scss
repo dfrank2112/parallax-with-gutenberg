@@ -1,0 +1,29 @@
+// ---- ---- ---- ---- VARIABLES ---- ---- ---- ----
+
+// Greys
+$appMidGrey: #303036;
+$black: #000;
+$darkerGrey: lighten($black, 10%);
+$darkGrey: lighten($black, 25%);    //#404040
+$midGrey: lighten($black, 50%);     //#808080
+$lightGrey: lighten($black, 75%);   //#bfbfbf
+$lighterGrey: lighten($black, 90%); //#e6e6e6
+$lightestGrey: #f0f0f0;
+$white: #fff;
+
+// Utility Colors
+$appError: #b70a0a;
+$appWarning: #d1a80a;
+$appOkay: #378c4a;
+
+// Common easing
+$sexyEase: cubic-bezier(.56,.15,.16,1);
+
+// Breakpoints
+$largeMobileBreakpoint: 25em; 	    // <400px
+$smallTabletBreakpoint: 36.5em; 	// <584px
+$tabletBreakpoint: 47.5em;			// <760px
+$desktopBreakpoint: 63em;			// <1008px
+$widescreenBreakpoint: 79.5em;		// <1272px
+$superWideBreakpoint: 115em;		// <1840px
+$finalBreakpoint: 133.25em;         // <1920px

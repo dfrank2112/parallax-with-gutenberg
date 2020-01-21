@@ -1,0 +1,8 @@
+.wp-block-jab-box {
+    &.is-back-end {
+        @media screen and (max-width: $widescreenBreakpoint) {
+            padding: 0 !important;
+            width: 100% !important;
+        }
+    }
+}

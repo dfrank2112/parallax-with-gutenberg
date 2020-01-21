@@ -1,0 +1,24 @@
+.wp-block-jab-box {
+    padding: 4rem 2rem;
+    .block__inner {
+        position: relative;
+        z-index: 1;
+        max-width: (700rem/16);
+        margin: 0 auto;
+        padding: 1rem;
+    }
+
+    .parallax-inner {
+        height: 120%;
+    }
+
+    &.is-front-end {
+        @media screen and (min-width: $desktopBreakpoint) {
+            padding: 5rem 2rem;
+        }
+
+        @media screen and (min-width: $widescreenBreakpoint) {
+            padding: 7rem 2rem;
+        }
+    }
+}
