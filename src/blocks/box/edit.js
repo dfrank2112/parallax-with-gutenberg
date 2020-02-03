@@ -8,6 +8,9 @@ const
 // Plugin
 import namespace from '../../namespace';
 
+// Block
+import BoxParallax from './save/BoxParallax';
+
 const edit = ({ className, attributes, setAttributes }) => {
     const
 
@@ -19,18 +22,12 @@ const edit = ({ className, attributes, setAttributes }) => {
             parallaxEnabled
         } = attributes,
 
-        // BG Opacity CSS
-        bgOpacity = bgImgOpacity === 10 ? 1 : `0.${ bgImgOpacity }`,
-
-        // BG Image CSS
-        bgImage = bgImgObject.sizes ? `url(${ bgImgObject.sizes.full.url }) center/cover no-repeat` : 'none',
-
         // Runs when bgImgObject is an empty object
         chooseMedia = ({ open }) => {
             return (
                 <button
                     onClick={ open }
-                    className="button--jab"
+                    className={ `button--${ namespace }` }
                 >
                     { __('Choose Media', namespace) }
                 </button>
@@ -41,7 +38,7 @@ const edit = ({ className, attributes, setAttributes }) => {
         removeMedia = () => {
             return (
                 <button
-                    className="button--jab"
+                    className={ `button--${ namespace }` }
                     onClick={ () => {
                         setAttributes({
                             bgImgObject: {}
@@ -101,14 +98,12 @@ const edit = ({ className, attributes, setAttributes }) => {
                 } }
             >
 
-                { /** Background Image **/ }
-                <div
-                    className="block__bg-img u-full_cover_absolute"
-                    style={ {
-                        background: bgImage,
-                        opacity: bgOpacity
-                    } }
-                > </div>
+                { /** Background **/ }
+                <div className="block__react u-full_cover_absolute">
+                    <BoxParallax
+                        { ...attributes }
+                    />
+                </div>
 
                 { /** Content **/ }
                 <div className="block__inner">

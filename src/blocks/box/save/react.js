@@ -16,7 +16,7 @@ boxBlocks.forEach(block => {
         attributes = {
             bgImgObject: JSON.parse(block.dataset.bgimgobject),
             bgImgOpacity: parseInt(block.dataset.bgimgopacity),
-            parallaxEnabled: (block.dataset.parallaxenabled === 'true')
+            parallaxEnabled: block.dataset.parallaxenabled === 'true'
         },
         blockMount = block.querySelector('.block__react');
 

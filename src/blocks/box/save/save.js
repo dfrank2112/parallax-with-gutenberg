@@ -4,6 +4,9 @@ const { InnerBlocks } = wp.blockEditor;
 // Plugin
 import namespace from '../../../namespace';
 
+// Block
+import BoxParallax from './BoxParallax';
+
 const save = ({ attributes, className }) => {
     const
 
@@ -13,15 +16,7 @@ const save = ({ attributes, className }) => {
             bgImgOpacity,
             backgroundColor,
             parallaxEnabled
-        } = attributes,
-
-        // BG Opacity CSS
-        bgOpacity = bgImgOpacity === 10 ? '1' : `0.${ bgImgOpacity }`,
-
-        // BG Image CSS
-        bgImage = `url(${
-            bgImgObject.sizes ? bgImgObject.sizes.full.url : bgImgObject.url
-        }) center/cover no-repeat`;
+        } = attributes;
 
     return (
         <section
@@ -29,7 +24,7 @@ const save = ({ attributes, className }) => {
             data-bgimgopacity={ bgImgOpacity }
             data-parallaxenabled={ parallaxEnabled }
             className={
-                `${ className } wp-block--${ namespace } is-front-end u-relative_hidden`
+                `${ className } wp-block--${ namespace } is-front-end`
             }
             style={ {
                 background: backgroundColor ? backgroundColor : 'none',
@@ -38,13 +33,10 @@ const save = ({ attributes, className }) => {
 
             { /** Background **/ }
             <div className="block__react u-full_cover_absolute">
-                <div
-                    className="u-full_cover_absolute"
-                    style={ {
-                        background: bgImage,
-                        opacity: bgOpacity
-                    } }
-                > </div>
+                <BoxParallax
+                    bgImgOBject={ bgImgObject }
+                    bgImgOpacity={ bgImgOpacity }
+                />
             </div>
 
             { /** Container **/ }

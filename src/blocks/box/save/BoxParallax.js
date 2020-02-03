@@ -1,6 +1,6 @@
 const { Component } = wp.element;
 
-import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
+import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
 class BoxParallax extends Component {
     render() {
@@ -15,19 +15,19 @@ class BoxParallax extends Component {
             bgOpacity = bgImgOpacity === 10 ? '1' : `0.${ bgImgOpacity }`,
 
             // BG Image CSS
-            bgImage = `url(${
+            bgImage = bgImgObject ? `url(${
                 bgImgObject.sizes ? bgImgObject.sizes.full.url : bgImgObject.url
-            }) center/cover no-repeat`,
+            }) center/cover no-repeat` : undefined,
 
+            // Combined styles
             bgStyles = {
-                opacity: bgOpacity,
-                background: bgImage
+                background: bgImage,
+                opacity: bgOpacity
             };
 
         return parallaxEnabled ? (
             <ParallaxProvider>
                 <Parallax
-                    className="u-full_cover_absolute"
                     styleInner={ bgStyles }
                     y={ [0, -17] }
                 />
@@ -40,4 +40,5 @@ class BoxParallax extends Component {
         )
     }
 }
+
 export default BoxParallax;
