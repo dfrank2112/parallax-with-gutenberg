@@ -24,7 +24,7 @@ const save = ({ attributes, className }) => {
             data-bgimgopacity={ bgImgOpacity }
             data-parallaxenabled={ parallaxEnabled }
             className={
-                `${ className } wp-block--${ namespace } is-front-end`
+                `${ className } wp-block--${ namespace } is-front-end u-relative_hidden`
             }
             style={ {
                 background: backgroundColor ? backgroundColor : 'none',
