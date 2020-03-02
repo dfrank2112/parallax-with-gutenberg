@@ -91,7 +91,8 @@ const edit = ({ className, attributes, setAttributes }) => {
                 className={
                     `${ className } 
                     wp-block--${ namespace } 
-                    is-back-end`
+                    is-back-end
+                    u-relative_hidden`
                 }
                 style={ {
                     background: backgroundColor !== '' ? backgroundColor : 'none',
