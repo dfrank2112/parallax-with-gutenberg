@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Parallax Gutenberg Block
+ * Plugin Name: [Tutorial] Parallax Block
  * Plugin URI: https://jbaker.media/
  * Description: A Box block with react and Parallax
  * Author: Josh Baker
